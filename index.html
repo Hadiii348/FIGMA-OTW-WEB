@@ -10,71 +10,127 @@
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
-      background-color: #ff8c00;
+      background: linear-gradient(180deg, #ffb347 0%, #ffcc33 100%);
       color: #fff;
       scroll-behavior: smooth;
     }
 
-    /* === Header === */
+    /* === HEADER === */
     header {
-      background-color: #f4a261;
+      background: linear-gradient(90deg, #e76f51, #f4a261);
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 10px 30px;
+      justify-content: space-between;
+      padding: 15px 10%;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     }
 
-    header img {
-      height: 60px;
+    .logo-title {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-title img {
+      height: 50px;
       border-radius: 10px;
+      margin-right: 15px;
+    }
+
+    .logo-title h2 {
+      font-size: 22px;
+      color: #fff;
+      letter-spacing: 1px;
+      margin: 0;
     }
 
     nav ul {
       list-style: none;
+      display: flex;
+      gap: 25px;
       margin: 0;
       padding: 0;
-      display: flex;
-      align-items: center;
-    }
-
-    nav ul li {
-      margin: 0 15px;
     }
 
     nav ul li a {
       text-decoration: none;
-      color: #000;
+      color: #fff;
       font-weight: 600;
-      transition: color 0.3s;
+      transition: 0.3s;
     }
 
     nav ul li a:hover {
-      color: #fff;
+      color: #ffe8a3;
     }
 
     .search-box input {
-      padding: 5px 10px;
-      border-radius: 5px;
+      padding: 6px 12px;
       border: none;
+      border-radius: 8px;
+      outline: none;
     }
 
-    /* === Section Umum === */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* === HEADER RESPONSIVE === */
+    @media (max-width: 850px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 10%;
+        background: rgba(0,0,0,0.9);
+        padding: 20px;
+        border-radius: 10px;
+        width: 200px;
+        text-align: right;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul.show {
+        display: flex;
+        animation: fadeDown 0.4s ease;
+      }
+
+      @keyframes fadeDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .search-box {
+        display: none;
+      }
+    }
+
+    /* === SECTION === */
     .section {
       padding: 60px 10%;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      margin: 30px 5%;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     }
 
-    h2 {
-      color: #fff;
-      border-left: 6px solid #fff;
-      padding-left: 10px;
-      margin-bottom: 30px;
-    }
+    #tentang { background: linear-gradient(135deg, #f4a261, #f6bd60); }
+    #varian { background: linear-gradient(135deg, #e9c46a, #f4a261); }
+    #manfaat { background: linear-gradient(135deg, #f6bd60, #e76f51); }
+    #berita { background: linear-gradient(135deg, #e76f51, #f4a261); }
 
-    /* === Layout Selang-seling === */
     .section-content {
       display: flex;
       align-items: center;
@@ -96,7 +152,6 @@
       margin: 10px;
     }
 
-    /* ukuran foto khusus bagian manfaat */
     #manfaat .section-content img {
       width: 20%;
     }
@@ -111,14 +166,9 @@
       line-height: 1.7;
     }
 
-    /* === Selang-seling otomatis === */
-    .section:nth-child(even) .section-content {
-      flex-direction: row-reverse;
-    }
-
-    /* === Footer === */
+    /* === FOOTER === */
     footer {
-      background-color: #fff;
+      background: linear-gradient(90deg, #fffbe6, #fdf0d5);
       color: #000;
       display: flex;
       justify-content: space-between;
@@ -126,6 +176,7 @@
       padding: 40px 10%;
       flex-wrap: wrap;
       text-align: left;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
     }
 
     footer div {
@@ -142,7 +193,7 @@
     }
 
     footer h3 {
-      color: #f4a261;
+      color: #e76f51;
       margin-top: 10px;
     }
 
@@ -152,8 +203,17 @@
       line-height: 1.6;
     }
 
-    /* Responsif Footer di HP */
     @media (max-width: 768px) {
+      .section-content {
+        flex-direction: column;
+      }
+      .section-content img {
+        width: 80%;
+      }
+      .text-box {
+        width: 100%;
+        margin-bottom: 20px;
+      }
       footer {
         flex-direction: column;
         padding: 40px 20px;
@@ -162,22 +222,21 @@
         width: 100%;
         margin-bottom: 30px;
       }
-      footer img {
-        display: block;
-      }
     }
   </style>
 </head>
 <body>
 
   <!-- Header -->
-    <!-- Header -->
   <header>
-    <div style="display: flex; align-items: center;">
+    <div class="logo-title">
       <img src="img/logo madu.jpg" alt="Fathan Store Logo">
-      <h2 style="margin-left: 10px; color: #fff; font-size: 22px;">Fathan Store</h2>
+      <h2>Fathan Store</h2>
     </div>
-    <nav>
+
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <nav id="navbar">
       <ul>
         <li><a href="#tentang">Tentang</a></li>
         <li><a href="#varian">Varian</a></li>
@@ -186,14 +245,14 @@
         <li><a href="#kontak">Kontak</a></li>
       </ul>
     </nav>
+
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="Cari...">
     </div>
   </header>
 
-
   <!-- Tentang -->
-  <section id="tentang" class="section animate">
+  <section id="tentang" class="section">
     <h2>Tentang Fathan Store</h2>
     <div class="section-content">
       <div class="text-box">
@@ -205,7 +264,7 @@
   </section>
 
   <!-- Varian -->
-  <section id="varian" class="section animate">
+  <section id="varian" class="section">
     <h2>Varian Madu</h2>
     <div class="section-content reverse">
       <img src="img/madu 3.jpg" alt="Varian Madu">
@@ -220,7 +279,7 @@
   </section>
 
   <!-- Manfaat -->
-  <section id="manfaat" class="section animate">
+  <section id="manfaat" class="section">
     <h2>Manfaat Madu</h2>
     <div class="section-content">
       <div class="text-box">
@@ -237,7 +296,7 @@
   </section>
 
   <!-- Berita -->
-  <section id="berita" class="section animate">
+  <section id="berita" class="section">
     <h2>Berita & Info</h2>
     <div class="section-content reverse">
       <img src="img/imun.jpg" alt="Berita Madu">
@@ -275,39 +334,23 @@
   </footer>
 
   <script>
-  // Fungsi animasi saat elemen muncul di layar
-  function checkVisibleSections() {
-    $('.animate').each(function() {
-      const top = $(this).offset().top;
-      const scroll = $(window).scrollTop();
-      const windowHeight = $(window).height();
-      if (scroll > top - windowHeight + 100) {
-        $(this).addClass('visible');
-      }
+    // Toggle menu responsif
+    $('#menu-toggle').on('click', function() {
+      $('#navbar ul').toggleClass('show');
     });
-  }
 
-  // Jalankan saat scroll
-  $(window).on('scroll', checkVisibleSections);
-
-  // Jalankan saat pertama kali halaman dibuka
-  $(document).ready(function() {
-    checkVisibleSections();
-
-    // Smooth scroll saat klik navbar
-    $('nav ul li a').on('click', function(e) {
+    // Smooth scroll ke bagian
+    $('nav a').on('click', function(e) {
       e.preventDefault();
       const target = $(this).attr('href');
-      const offsetTop = $(target).offset().top - 70; // biar ga ketutup header
+      const offsetTop = $(target).offset().top - 70; // biar gak ketutup header
+      $('html, body').animate({ scrollTop: offsetTop }, 700, 'swing');
 
-      $('html, body').animate({
-        scrollTop: offsetTop
-      }, 800, function() {
-        // Setelah animasi selesai, cek ulang animasi elemen
-        checkVisibleSections();
-      });
+      // Tutup menu setelah klik (untuk mobile)
+      if ($(window).width() < 850) {
+        $('#navbar ul').removeClass('show');
+      }
     });
-  });
-</script>
+  </script>
 </body>
 </html>
