@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fathan Store</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #ff8c00;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    /* === Header === */
+    header {
+      background-color: #f4a261;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+    header img {
+      height: 60px;
+      border-radius: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #fff;
+    }
+
+    .search-box input {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    /* === Section Umum === */
+    .section {
+      padding: 60px 10%;
+    }
+
+    h2 {
+      color: #fff;
+      border-left: 6px solid #fff;
+      padding-left: 10px;
+      margin-bottom: 30px;
+    }
+
+    /* === Layout Selang-seling === */
+    .section-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .section-content.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .section-content img {
+      width: 25%;
+      border-radius: 15px;
+      height: auto;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      margin: 10px;
+    }
+
+    /* ukuran foto khusus bagian manfaat */
+    #manfaat .section-content img {
+      width: 20%;
+    }
+
+    .text-box {
+      width: 65%;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 25px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* === Selang-seling otomatis === */
+    .section:nth-child(even) .section-content {
+      flex-direction: row-reverse;
+    }
+
+    /* === Footer === */
+    footer {
+      background-color: #fff;
+      color: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 40px 10%;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+
+    footer div {
+      width: 30%;
+      min-width: 250px;
+      text-align: left;
+    }
+
+    footer img {
+      height: 60px;
+      margin: 10px 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    footer h3 {
+      color: #f4a261;
+      margin-top: 10px;
+    }
+
+    footer p, footer a {
+      color: #000;
+      text-decoration: none;
+      line-height: 1.6;
+    }
+
+    /* Responsif Footer di HP */
+    @media (max-width: 768px) {
+      footer {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+      footer div {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      footer img {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+    <!-- Header -->
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="img/logo madu.jpg" alt="Fathan Store Logo">
+      <h2 style="margin-left: 10px; color: #fff; font-size: 22px;">Fathan Store</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#varian">Varian</a></li>
+        <li><a href="#manfaat">Manfaat</a></li>
+        <li><a href="#berita">Berita</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Cari...">
+    </div>
+  </header>
+
+
+  <!-- Tentang -->
+  <section id="tentang" class="section animate">
+    <h2>Tentang Fathan Store</h2>
+    <div class="section-content">
+      <div class="text-box">
+        <p><b>Fathan Store</b> berawal dari kebiasaan sederhana keluarga kami yang suka mengonsumsi madu asli sebagai penambah energi dan daya tahan tubuh. Karena sulit menemukan madu yang benar-benar murni, kami akhirnya memutuskan untuk mengolah dan menjual madu asli langsung dari peternak lokal.</p>
+        <p>Nama “Fathan” diambil dari kata yang berarti cerdas dan penuh berkah — harapannya, setiap tetes madu dari Fathan Store bisa membawa manfaat dan kebaikan bagi siapa pun yang mengonsumsinya.</p>
+      </div>
+      <img src="img/peternakan.jpg" alt="Peternakan Madu">
+    </div>
+  </section>
+
+  <!-- Varian -->
+  <section id="varian" class="section animate">
+    <h2>Varian Madu</h2>
+    <div class="section-content reverse">
+      <img src="img/madu 3.jpg" alt="Varian Madu">
+      <div class="text-box">
+        <ol>
+          <li><b>Madu Hutan Asli</b> – Rasa manis alami dengan aroma khas hutan tropis.</li>
+          <li><b>Madu Hitam Pahit Premium</b> – Kaya antioksidan, bantu jaga tekanan darah & daya tahan tubuh.</li>
+          <li><b>Madu Klanceng (Trigona)</b> – Tekstur encer tapi khasiat tinggi untuk stamina & vitalitas.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Manfaat -->
+  <section id="manfaat" class="section animate">
+    <h2>Manfaat Madu</h2>
+    <div class="section-content">
+      <div class="text-box">
+        <ol>
+          <li><b>Menjaga Daya Tahan Tubuh</b> – Bantu tubuh tetap kuat melawan lelah.</li>
+          <li><b>Bikin Kulit Glowing</b> – Kandungan alaminya bantu rawat kulit dari dalam.</li>
+          <li><b>Penambah Energi</b> – Ganti gula harianmu dengan madu, manis & sehat.</li>
+          <li><b>Redakan Batuk</b> – Efek lembut tapi manjur buat tenggorokan.</li>
+          <li><b>Menenangkan Pikiran</b> – Satu sendok sebelum tidur bantu tidur nyenyak.</li>
+        </ol>
+      </div>
+      <img src="img/madu 2.jpg" alt="Manfaat Madu">
+    </div>
+  </section>
+
+  <!-- Berita -->
+  <section id="berita" class="section animate">
+    <h2>Berita & Info</h2>
+    <div class="section-content reverse">
+      <img src="img/imun.jpg" alt="Berita Madu">
+      <div class="text-box">
+        <p>Ikuti update terbaru tentang madu asli, tips kesehatan alami, dan promo menarik dari <b>Fathan Store</b>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="kontak">
+    <div>
+      <img src="img/logo madu.jpg" alt="Logo Fathan">
+      <h3>Fathan Store</h3>
+      <p>Madu Fathan Store dibuat oleh produsen bersertifikat TOP BRAND, Halal, dan ISO 22000:2005. Jaminan madu kualitas terbaik untuk keluarga Anda.</p>
+    </div>
+
+    <div>
+      <h3>Sertifikat Produk</h3>
+      <div style="display: flex; gap: 15px; align-items: center;">
+        <img src="img/halal-removebg-preview.png" alt="Halal">
+        <img src="img/topbrand-removebg-preview.png" alt="Top Brand">
+      </div>
+      <p>Ikuti kami di Instagram & TikTok:<br><b>@fathanstore_</b></p>
+    </div>
+
+    <div>
+      <h3>Temukan Produk Kami</h3>
+      <div style="display: flex; gap: 15px; align-items: center;">
+        <img src="img/shopee-removebg-preview.png" alt="Shopee">
+        <img src="img/bukalapak-removebg-preview.png" alt="Bukalapak">
+      </div>
+      <p><b>Kontak:</b><br>📞 0812-3456-78123<br>✉️ dzxy@gmail.com</p>
+    </div>
+  </footer>
+
+  <script>
+  // Fungsi animasi saat elemen muncul di layar
+  function checkVisibleSections() {
+    $('.animate').each(function() {
+      const top = $(this).offset().top;
+      const scroll = $(window).scrollTop();
+      const windowHeight = $(window).height();
+      if (scroll > top - windowHeight + 100) {
+        $(this).addClass('visible');
+      }
+    });
+  }
+
+  // Jalankan saat scroll
+  $(window).on('scroll', checkVisibleSections);
+
+  // Jalankan saat pertama kali halaman dibuka
+  $(document).ready(function() {
+    checkVisibleSections();
+
+    // Smooth scroll saat klik navbar
+    $('nav ul li a').on('click', function(e) {
+      e.preventDefault();
+      const target = $(this).attr('href');
+      const offsetTop = $(target).offset().top - 70; // biar ga ketutup header
+
+      $('html, body').animate({
+        scrollTop: offsetTop
+      }, 800, function() {
+        // Setelah animasi selesai, cek ulang animasi elemen
+        checkVisibleSections();
+      });
+    });
+  });
+</script>
+</body>
+</html>
