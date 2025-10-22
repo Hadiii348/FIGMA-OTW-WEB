@@ -65,13 +65,6 @@
       color: #ffe8a3;
     }
 
-    .search-box input {
-      padding: 6px 12px;
-      border: none;
-      border-radius: 8px;
-      outline: none;
-    }
-
     .menu-toggle {
       display: none;
       font-size: 28px;
@@ -79,14 +72,114 @@
       cursor: pointer;
     }
 
-    /* === HEADER RESPONSIVE === */
+    /* === SECTION === */
+    .section {
+      padding: 60px 10%;
+      border-radius: 15px;
+      margin: 30px 5%;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    #tentang { background: linear-gradient(135deg, #f4a261, #f6bd60); }
+    #varian { background: linear-gradient(135deg, #e9c46a, #f4a261); }
+    #manfaat { background: linear-gradient(135deg, #f6bd60, #e76f51); }
+    #berita { background: linear-gradient(135deg, #e76f51, #f4a261); }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 26px;
+      color: #fff;
+      text-shadow: 1px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .section-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .section-content.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .section-content img {
+      width: 30%;
+      min-width: 220px;
+      border-radius: 15px;
+      height: auto;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    #manfaat .section-content img {
+      width: 22%;
+      min-width: 200px;
+    }
+
+    /* Hapus background putih di text box */
+    .text-box {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.7;
+      min-width: 250px;
+    }
+
+    /* === FOOTER === */
+    footer {
+      background: linear-gradient(90deg, #fffbe6, #fdf0d5);
+      color: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 40px 10%;
+      flex-wrap: wrap;
+      text-align: left;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+    }
+
+    footer div {
+      width: 30%;
+      min-width: 250px;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    footer img {
+      height: 60px;
+      margin: 10px 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    footer h3 {
+      color: #e76f51;
+      margin-top: 10px;
+    }
+
+    footer p, footer a {
+      color: #000;
+      text-decoration: none;
+      line-height: 1.6;
+    }
+
+    /* === RESPONSIVE === */
     @media (max-width: 850px) {
+      header {
+        padding: 15px 5%;
+      }
+
       nav ul {
         display: none;
         flex-direction: column;
         position: absolute;
         top: 70px;
-        right: 10%;
+        right: 5%;
         background: rgba(0,0,0,0.9);
         padding: 20px;
         border-radius: 10px;
@@ -112,115 +205,28 @@
         to { opacity: 1; transform: translateY(0); }
       }
 
-      .search-box {
-        display: none;
-      }
-    }
-
-    /* === SECTION === */
-    .section {
-      padding: 60px 10%;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 15px;
-      margin: 30px 5%;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    }
-
-    #tentang { background: linear-gradient(135deg, #f4a261, #f6bd60); }
-    #varian { background: linear-gradient(135deg, #e9c46a, #f4a261); }
-    #manfaat { background: linear-gradient(135deg, #f6bd60, #e76f51); }
-    #berita { background: linear-gradient(135deg, #e76f51, #f4a261); }
-
-    .section-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-
-    .section-content.reverse {
-      flex-direction: row-reverse;
-    }
-
-    .section-content img {
-      width: 25%;
-      border-radius: 15px;
-      height: auto;
-      object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      margin: 10px;
-    }
-
-    #manfaat .section-content img {
-      width: 20%;
-    }
-
-    .text-box {
-      width: 65%;
-      background: rgba(255, 255, 255, 0.15);
-      padding: 25px;
-      border-radius: 10px;
-      color: #fff;
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    /* === FOOTER === */
-    footer {
-      background: linear-gradient(90deg, #fffbe6, #fdf0d5);
-      color: #000;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 40px 10%;
-      flex-wrap: wrap;
-      text-align: left;
-      box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
-    }
-
-    footer div {
-      width: 30%;
-      min-width: 250px;
-      text-align: left;
-    }
-
-    footer img {
-      height: 60px;
-      margin: 10px 0;
-      display: inline-block;
-      vertical-align: middle;
-    }
-
-    footer h3 {
-      color: #e76f51;
-      margin-top: 10px;
-    }
-
-    footer p, footer a {
-      color: #000;
-      text-decoration: none;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
       .section-content {
-        flex-direction: column;
+        flex-direction: column !important;
+        text-align: center;
       }
+
       .section-content img {
         width: 80%;
       }
+
       .text-box {
         width: 100%;
         margin-bottom: 20px;
       }
+
       footer {
         flex-direction: column;
         padding: 40px 20px;
+        text-align: center;
       }
+
       footer div {
         width: 100%;
-        margin-bottom: 30px;
       }
     }
   </style>
@@ -245,10 +251,6 @@
         <li><a href="#kontak">Kontak</a></li>
       </ul>
     </nav>
-
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Cari...">
-    </div>
   </header>
 
   <!-- Tentang -->
@@ -334,22 +336,16 @@
   </footer>
 
   <script>
-    // Toggle menu responsif
     $('#menu-toggle').on('click', function() {
       $('#navbar ul').toggleClass('show');
     });
 
-    // Smooth scroll ke bagian
     $('nav a').on('click', function(e) {
       e.preventDefault();
       const target = $(this).attr('href');
-      const offsetTop = $(target).offset().top - 70; // biar gak ketutup header
+      const offsetTop = $(target).offset().top - 70;
       $('html, body').animate({ scrollTop: offsetTop }, 700, 'swing');
-
-      // Tutup menu setelah klik (untuk mobile)
-      if ($(window).width() < 850) {
-        $('#navbar ul').removeClass('show');
-      }
+      if ($(window).width() < 850) $('#navbar ul').removeClass('show');
     });
   </script>
 </body>
